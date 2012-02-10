@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "gateway"
   gem.homepage = "http://github.com/aq1018/gateway"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{ Opinionated Generic IO Connection Manager }
+  gem.description = %Q{ Opinionated Generic IO Connection Manager }
   gem.email = "aq1018@gmail.com"
   gem.authors = ["Aaron Qian"]
   # dependencies defined in Gemfile
