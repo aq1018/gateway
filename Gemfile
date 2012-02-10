@@ -1,5 +1,6 @@
 source "http://rubygems.org"
 
+gem "activesupport", "~> 3.0"
 gem "resource_pool", ">= 0.2.0"
 
 # Add dependencies to develop your gem here.

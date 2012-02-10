@@ -1,3 +1,7 @@
+require 'active_support/core_ext/object/blank'
+require 'active_support/core_ext/class/attribute'
+require 'timeout'
+
 require 'gateway/errors'
 
 require 'gateway/feature/retry'
@@ -13,8 +17,4 @@ require 'gateway/connection/single'
 require 'gateway/connection'
 
 require 'gateway/base'
-require 'gateway/memcache'
-require 'gateway/http'
-
-
 
