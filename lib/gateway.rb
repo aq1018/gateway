@@ -1,6 +1,7 @@
 require 'active_support/core_ext/object/blank'
 require 'active_support/core_ext/class/attribute'
 require 'timeout'
+require 'net/http'
 
 require 'gateway/errors'
 
