@@ -1,9 +1,19 @@
 = gateway
 
-Description goes here.
+Gateway is an opinionated generic IO connection manager. It is created to be a manager / wrapper that can provide a uniform behavior across various IO connection types such as HTTP, Memcache, database, or even generic TCP / UDP protocols.
+
+This gem provides a `Gateway::Base` class for other connection types to be built upon. It provides the following features:
+
+* Connection Management. Choose from single, connection pooling, or thread local.
+* Error Transform / Handling.
+* Timeouts
+* Automatic retry
+* performance logging
+* Newrelic instrumentation. ( If newrelic is loaded. )
+
 
 == Contributing to gateway
- 
+
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
 * Fork the project.
