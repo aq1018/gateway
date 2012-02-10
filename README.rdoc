@@ -10,7 +10,7 @@ This gem provides a `Gateway::Base` class for other connection types to be built
 * Automatic retry
 * performance logging
 * Newrelic instrumentation. ( If newrelic is loaded. )
-
+* Designed specifically for multi-threaded usage and is completely thread safe.
 
 == Contributing to gateway
 
