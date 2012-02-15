@@ -14,24 +14,27 @@ module Gateway
       protected
 
       def errors_for(action, error_category)
+        action = action.to_s
         cat = self.error_catalog[error_category]
         return [] if cat.blank?
 
         errors  = cat[action] ? cat[action][:errors] : []
-        default_errors = cat[:all][:errors] || []
+        default_errors = cat['all'][:errors] || []
         errors + default_errors
       end
 
       def error_callbacks_for(action, error_category)
+        action = action.to_s
         cat = self.error_catalog[error_category]
         return [] if cat.blank?
 
         lambdas = cat[action]  ? cat[action][:lambdas] : []
-        default_lambdas = cat[:all][:lambdas] || []
+        default_lambdas = cat['all'][:lambdas] || []
         lambdas + default_lambdas
       end
 
       def run_callbacks_for(action, error_category)
+        action = action.to_s
         error_callbacks_for(action, error_category).each do |cb|
           cb.call self
         end
@@ -63,7 +66,10 @@ module Gateway
           errors = params.flatten
 
           actions = [opt[:for]].flatten.compact
-          actions = [:all] if actions.blank?
+          actions = ['all'] if actions.blank?
+
+          # convert actions to string
+          actions.map!{ |action| action.to_s }
 
           categories = [opt[:as]].flatten.compact
           categories = error_categories if categories.blank?
