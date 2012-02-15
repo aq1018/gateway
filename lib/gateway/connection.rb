@@ -4,6 +4,10 @@ module Gateway
     include ThreadLocal
     include Pool
 
+    def purge_current_connection!
+      send "purge_current_connection_from_#{connection_type}!"
+    end
+
     protected
 
     def connect
@@ -16,10 +20,6 @@ module Gateway
 
     def reconnect(conn)
       raise "Abstract Method"
-    end
-
-    def purge_current_connection!
-      send "purge_current_connection_from_#{connection_type}!"
     end
 
     def connection_type
