@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Aaron Qian"]
-  s.date = "2012-02-10"
+  s.date = "2012-02-15"
   s.description = " Opinionated Generic IO Connection Manager "
   s.email = "aq1018@gmail.com"
   s.extra_rdoc_files = [
@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "gateway.gemspec",
     "lib/gateway.rb",
     "lib/gateway/base.rb",
     "lib/gateway/connection.rb",
