@@ -1,8 +1,8 @@
 module Gateway
   module Connection
-    include Single
-    include ThreadLocal
-    include Pool
+    #include Single
+    #include ThreadLocal
+    #include Pool
 
     def purge_current_connection!
       send "purge_current_connection_from_#{connection_type}!"

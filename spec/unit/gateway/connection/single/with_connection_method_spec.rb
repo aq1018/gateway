@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe Gateway::Connection::Single do
-  subject { Gateway::Connection::Single.new(gateway)  }
+describe Gateway::Connection::Single, "#with_connection" do
+  subject { described_class.new(gateway)  }
 
   let(:gateway) { mock() }
   let(:conn)    { mock() }

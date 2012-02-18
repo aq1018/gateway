@@ -7,7 +7,7 @@ task :spec => %w[ spec:unit spec:integration ]
 namespace :spec do
   desc "Run all tests with code coverage"
   task :coverage do
-    ENV['COVERAGE'] = true
+    ENV['COVERAGE'] = 'true'
     Rake::Task["spec"].execute
   end
 
@@ -19,7 +19,7 @@ namespace :spec do
   namespace :integration do
     desc "Run integration tests with code coverage"
     task :coverage do
-      ENV['COVERAGE'] = true
+      ENV['COVERAGE'] = 'true'
       Rake::Task["spec:integration"].execute
     end
   end
@@ -32,7 +32,7 @@ namespace :spec do
   namespace :unit do
     desc "Run unit test with code coverage"
     task :coverage do
-      ENV['COVERAGE'] = true
+      ENV['COVERAGE'] = 'true'
       Rake::Task["spec:unit"].execute
     end
   end

@@ -1,13 +1,17 @@
 module Gateway
   module Connection
-    module Single
-      protected
-      def with_single(&block)
-        conn = connect
+    class Single
+      def initialize(gateway)
+        @gateway = gateway
+      end
+
+      def with_connection(&block)
+        conn = @gateway.connect
+
         begin
           block.call conn
         ensure
-          disconnect(conn)
+          @gateway.disconnect(conn)
         end
       end
 
