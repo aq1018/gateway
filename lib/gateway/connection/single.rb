@@ -15,7 +15,7 @@ module Gateway
         end
       end
 
-      def purge_current_connection_from_single!
+      def purge_current_connection!
         # This is intentionally empty.
         # Do not remove this method.
       end

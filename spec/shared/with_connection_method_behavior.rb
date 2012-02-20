@@ -4,20 +4,12 @@ shared_examples_for 'a #with_connection method' do
     gateway.stub(:disconnect).with(conn)
   end
 
-  it "invokes #connect on gateway" do
-    gateway.should_receive(:connect).with().and_return(conn)
-    subject.with_connection { }
-  end
-
-  it "invokes #disconnect on gateway after block" do
-    gateway.should_receive(:disconnect).with(conn)
-    subject.with_connection { }
-  end
-
   it "passes conn as argument into block" do
-    subject.with_connection do |my_conn|
-      my_conn.should == conn
-    end
+    subject.with_connection{ |c| c.should == conn }
   end
 
+  it "invokes #connect on gateway exactly once" do
+    gateway.should_receive(:connect).once().with(no_args()).and_return(conn)
+    subject.with_connection {}
+  end
 end
