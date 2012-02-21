@@ -1,26 +1,33 @@
+require 'resource_pool'
+
 module Gateway
   module Connection
-    module Pool
-      protected
+    class Pool
+      def initialize(gateway, options={})
+        @gateway = gateway
+        @options = options
+      end
 
-      def with_pool(&block)
+      def with_connection(&block)
         pool.hold do |conn|
           block.call(conn)
         end
       end
 
-      def purge_current_connection_from_pool!
+      def purge_current_connection!
         pool.trash_current!
       end
 
+      protected
+
       def pool
-        @pool ||= ResourcePool.new(pool_options) { connect }
+        @pool ||= ResourcePool.new(options) { @gateway.connect }
       end
 
-      def pool_options
-        @pool_options ||= {
-          :delete_proc => lambda{ |conn| disconnect conn }
-        }.merge(options[:pool])
+      def options
+        {
+          :delete_proc => lambda{ |conn| @gateway.disconnect conn }
+        }.merge(@options)
       end
     end
   end
