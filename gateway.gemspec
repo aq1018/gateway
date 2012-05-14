@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "gateway"
-  s.version = "0.1.1"
+  s.version = "0.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Aaron Qian"]
-  s.date = "2012-02-15"
+  s.date = "2012-05-14"
   s.description = " Opinionated Generic IO Connection Manager "
   s.email = "aq1018@gmail.com"
   s.extra_rdoc_files = [
@@ -44,7 +44,7 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/aq1018/gateway"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.10"
+  s.rubygems_version = "1.8.19"
   s.summary = "Opinionated Generic IO Connection Manager"
 
   if s.respond_to? :specification_version then
@@ -53,28 +53,28 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<activesupport>, ["~> 3.0"])
       s.add_runtime_dependency(%q<resource_pool>, [">= 0.2.0"])
-      s.add_development_dependency(%q<rspec>, ["~> 2.8.0"])
-      s.add_development_dependency(%q<yard>, ["~> 0.7"])
-      s.add_development_dependency(%q<rdoc>, ["~> 3.12"])
-      s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
-      s.add_development_dependency(%q<jeweler>, ["~> 1.8.3"])
+      s.add_development_dependency(%q<rspec>, [">= 2.8.0"])
+      s.add_development_dependency(%q<yard>, [">= 0.7"])
+      s.add_development_dependency(%q<rdoc>, [">= 3.12"])
+      s.add_development_dependency(%q<bundler>, [">= 1.0.0"])
+      s.add_development_dependency(%q<jeweler>, [">= 1.8.3"])
     else
       s.add_dependency(%q<activesupport>, ["~> 3.0"])
       s.add_dependency(%q<resource_pool>, [">= 0.2.0"])
-      s.add_dependency(%q<rspec>, ["~> 2.8.0"])
-      s.add_dependency(%q<yard>, ["~> 0.7"])
-      s.add_dependency(%q<rdoc>, ["~> 3.12"])
-      s.add_dependency(%q<bundler>, ["~> 1.0.0"])
-      s.add_dependency(%q<jeweler>, ["~> 1.8.3"])
+      s.add_dependency(%q<rspec>, [">= 2.8.0"])
+      s.add_dependency(%q<yard>, [">= 0.7"])
+      s.add_dependency(%q<rdoc>, [">= 3.12"])
+      s.add_dependency(%q<bundler>, [">= 1.0.0"])
+      s.add_dependency(%q<jeweler>, [">= 1.8.3"])
     end
   else
     s.add_dependency(%q<activesupport>, ["~> 3.0"])
     s.add_dependency(%q<resource_pool>, [">= 0.2.0"])
-    s.add_dependency(%q<rspec>, ["~> 2.8.0"])
-    s.add_dependency(%q<yard>, ["~> 0.7"])
-    s.add_dependency(%q<rdoc>, ["~> 3.12"])
-    s.add_dependency(%q<bundler>, ["~> 1.0.0"])
-    s.add_dependency(%q<jeweler>, ["~> 1.8.3"])
+    s.add_dependency(%q<rspec>, [">= 2.8.0"])
+    s.add_dependency(%q<yard>, [">= 0.7"])
+    s.add_dependency(%q<rdoc>, [">= 3.12"])
+    s.add_dependency(%q<bundler>, [">= 1.0.0"])
+    s.add_dependency(%q<jeweler>, [">= 1.8.3"])
   end
 end
 
