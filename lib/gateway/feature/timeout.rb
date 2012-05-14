@@ -11,7 +11,13 @@ module Gateway
 
       def with_timeout(opts={}, &block)
         return block.call if opts[:timeout] == false
-        ::Timeout.timeout(opts[:timeout] || timeout){ block.call }
+        t = opts[:timeout] || timeout
+
+        # if the timeout is 0 or negative, timeout is raised
+        # without executing the block
+        raise ::Timeout::Error if t <= 0
+
+        ::Timeout.timeout(t){ block.call }
       end
     end
   end
