@@ -22,6 +22,7 @@ module Gateway
           resp    = block.call
           status  = success_status(resp)
           desc    = success_message(resp)
+          resp
         rescue => e
           status = error_status(e)
           desc = error_message(e)
