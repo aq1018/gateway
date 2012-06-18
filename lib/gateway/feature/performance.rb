@@ -16,12 +16,12 @@ module Gateway
       def with_perf(action, req, opts={}, &block)
         return block.call if opts[:perf] == false
 
-        status     = success_status
-        desc       = success_message
         start_time = Time.now
 
         begin
-          block.call
+          resp    = block.call
+          status  = success_status(resp)
+          desc    = success_message(resp)
         rescue => e
           status = error_status(e)
           desc = error_message(e)
@@ -33,11 +33,11 @@ module Gateway
         end
       end
 
-      def success_status
+      def success_status(resp)
         200
       end
 
-      def success_message
+      def success_message(resp)
         "OK"
       end
 
