@@ -4,14 +4,16 @@ module Gateway
       DEFAULT_TIMEOUT = 2
 
       def timeout
-        @timeout ||= (options[:timeout] || Gateway::Feature::Timeout::DEFAULT_TIMEOUT)
+        @timeout ||= options.fetch  :timeout,
+                                    Gateway::Feature::Timeout::DEFAULT_TIMEOUT
       end
 
       protected
 
       def with_timeout(opts={}, &block)
-        return block.call if opts[:timeout] == false
-        t = opts[:timeout] || timeout
+        t = opts.fetch(:timeout, timeout)
+
+        return block.call if t == false
 
         # if the timeout is 0 or negative, timeout is raised
         # without executing the block
