@@ -19,15 +19,16 @@ module Gateway
         start_time = Time.now
 
         begin
-          resp    = block.call
-          status  = success_status(resp)
-          desc    = success_message(resp)
-          resp
-        rescue => e
-          status = error_status(e)
-          desc = error_message(e)
-          raise
+          resp = block.call
         ensure
+          if e = $!
+            status = error_status(e)
+            desc   = error_message(e)
+          else
+            status = success_status(resp)
+            desc   = success_message(resp)
+          end
+
           duration = Time.now - start_time
           req = "#{action.to_s.upcase} #{req}"
           profiler.performance(name.to_s, duration, status, desc, req)
