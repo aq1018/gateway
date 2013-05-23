@@ -3,8 +3,7 @@
 [![Gem Version](https://badge.fury.io/rb/gateway.png)](http://badge.fury.io/rb/gateway)
 [![Build Status](https://travis-ci.org/aq1018/gateway.png?branch=master)](https://travis-ci.org/aq1018/gateway)
 [![Dependency Status](https://gemnasium.com/aq1018/gateway.png)](https://gemnasium.com/aq1018/gateway)
-[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/aq1018/gateway)
-
+[![Code Climate](https://codeclimate.com/github/aq1018/gateway.png)](https://codeclimate.com/github/aq1018/gateway)
 
 Gateway is an opinionated generic IO connection manager. It is created to be a manager / wrapper that can provide a uniform behavior across various IO connection types such as HTTP, Memcache, database, or even generic TCP / UDP protocols.
 
