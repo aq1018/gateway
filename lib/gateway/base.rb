@@ -53,9 +53,9 @@ module Gateway
     def execute(action, req, opts={}, &block)
       with_connection(opts) do |conn|
         with_retry(action, opts) do
-          with_perf(action, req, opts) do
-            with_error_handle(action, conn, opts) do
-              with_new_relic(opts) do
+          with_error_handle(action, conn, opts) do
+            with_new_relic(opts) do
+              with_perf(action, req, opts) do
                 with_timeout(opts) do
                   block.call(conn)
                 end
